@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import FeaturedProject from "@/components/work/FeaturedProject";
 
 export default function Home() {
   return (
@@ -17,11 +18,14 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="work" className="scroll-mt-16 border-t border-border/80 py-24">
+      <section id="work" className="scroll-mt-16 border-t border-border/80 py-24 sm:py-28">
         <Container>
-          <h2 className="text-sm font-mono uppercase tracking-widest text-muted">
-            Work
-          </h2>
+          <div className="mb-12">
+            <h2 className="text-sm font-mono uppercase tracking-widest text-muted">
+              Work
+            </h2>
+          </div>
+          <FeaturedProject />
         </Container>
       </section>
 
