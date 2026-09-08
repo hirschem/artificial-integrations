@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import SelectedWork from "@/components/work/SelectedWork";
 import FeaturedProject from "@/components/work/FeaturedProject";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
             </h2>
           </div>
           <FeaturedProject />
+          <SelectedWork />
         </Container>
       </section>
 

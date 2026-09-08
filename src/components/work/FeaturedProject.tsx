@@ -106,11 +106,6 @@ export default function FeaturedProject() {
         </dl>
       </div>
 
-      <div className="mt-20 border-t border-border/80 pt-6">
-        <p className="font-mono text-xs tracking-[0.16em] text-muted uppercase">
-          Selected systems and client work
-        </p>
-      </div>
     </article>
   );
 }
