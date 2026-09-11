@@ -1,7 +1,7 @@
 const metrics = [
   { value: "12", label: "ORB Sessions" },
   { value: "817", label: "Backend Tests" },
-  { value: "400", label: "Parity Cases" },
+  { value: "800", label: "Parity Cases" },
 ];
 
 export default function MetricRow() {

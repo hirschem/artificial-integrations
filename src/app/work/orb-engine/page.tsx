@@ -115,9 +115,14 @@ export default function OrbEnginePage() {
             The live path ingests five-minute candles, computes opening ranges,
             and scans for break, retest, and rejection behavior. Weekend
             handling, configurable session behavior, and signal-only mode are
-            treated as explicit operating concerns. The system provides live
-            session monitoring and signal execution infrastructure without
-            exposing proprietary strategy parameters here.
+            treated as explicit operating concerns. Live crypto scanning and
+            historical research now use Kraken Futures candle data by default,
+            keeping the backtest and streaming paths aligned to the same
+            contracts rather than validating behavior on one instrument and
+            operating on another. OKX and Kraken spot remain supported data
+            venues, but they are not the default research/live pairing. The
+            crypto session runner is signal-only, while futures and margin
+            runners have optional order-placement paths.
           </p>
         </CaseStudySection>
 
@@ -138,12 +143,15 @@ export default function OrbEnginePage() {
           <p className="text-base leading-7 text-muted">
             Randomized parity testing verifies that the streaming signal engine
             produces the same decisions as the causal backtesting path. The
-            coverage uses 200 seeds across two direction-aware modes, producing
-            400 randomized live/backtest parity cases from the parity test.
+            parity harness now runs 200 randomized seeds across four
+            configuration combinations, producing 800 automated live/backtest
+            equivalence cases. The combinations represent base behavior,
+            direction-aware rejection, close-related behavior, and combined
+            close/range behavior.
           </p>
           <div className="mt-8 grid gap-6 border-t border-border pt-6 sm:grid-cols-2">
             <div>
-              <p className="text-3xl font-semibold tracking-tight">400</p>
+              <p className="text-3xl font-semibold tracking-tight">800</p>
               <p className="mt-2 font-mono text-xs leading-5 text-muted uppercase">
                 Randomized parity cases
               </p>
@@ -155,6 +163,11 @@ export default function OrbEnginePage() {
               </p>
             </div>
           </div>
+          <p className="mt-8 text-base leading-7 text-muted">
+            Separate replay validation has also compared the streaming scanner
+            and causal backtest across 500 randomized sessions and 2,466
+            emitted signals with zero mismatches.
+          </p>
           <p className="mt-8 text-base leading-7 text-muted">
             Regression coverage also validates break selection and
             direction-aware rejection behavior, making parity a maintained

@@ -100,7 +100,7 @@ export default function FeaturedProject() {
               Parity Cases
             </dt>
             <dd className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              400
+              800
             </dd>
           </div>
         </dl>
